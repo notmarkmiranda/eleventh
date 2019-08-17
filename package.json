@@ -1,5 +1,9 @@
 {
   "name": "app",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "engine": {
+    "yarn": "1.7.0"
+  }
+
 }
