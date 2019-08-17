@@ -8,6 +8,6 @@ ADD Gemfile Gemfile.lock /app/
 RUN bundle install
 
 ADD . .
-RUN bundle exec rake assets:precompile
+RUN sudo -u app RAILS_ENV=production rake assets:precompile
 CMD bundle exec puma -C config/puma.rb
 
