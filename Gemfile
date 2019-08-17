@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "2.6.3"
 
 gem "bootsnap", ">= 1.1.0", require: false
+gem "devise"
 gem "jbuilder", "~> 2.5"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 3.11"
@@ -14,7 +15,7 @@ gem "skeleton-rails"
 
 group :development, :test do
   gem "pry"
-  gem "rspec-rails", "~> 3.0.0"
+  gem "rspec-rails", "~> 3.8"
   gem "standard"
 end
 
