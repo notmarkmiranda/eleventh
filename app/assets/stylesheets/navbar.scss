@@ -1,0 +1,61 @@
+$PRIMARY_BLUE: #3A6EA5;
+$SECONDARY_BLUE: #004E98;
+$TERTIARY_GRAY: #565857;
+
+nav#main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  & > div.brand {
+    font-size: 2em;
+    text-transform: uppercase;
+    padding: 20px;
+
+    & > span {
+      color: $PRIMARY_BLUE;
+      font-weight: bold;
+    }
+  }
+
+  div.nav-links {
+    padding: 0px 20px;
+
+    & > a.link {
+      color: $TERTIARY_GRAY;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      text-decoration: none;
+      padding: 15px;
+
+      &:hover {
+        color: $SECONDARY_BLUE;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  nav#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div.nav-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      & > a.button.desktop-only {
+        display: none;
+      }
+
+      & > a.button {
+        width: 100%;
+      }
+    }
+  }
+}
