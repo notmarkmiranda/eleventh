@@ -1,9 +1,9 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-ENV["RAILS_ENV"] ||= 'test'
-require 'spec_helper'
+ENV["RAILS_ENV"] ||= "test"
+require "spec_helper"
 require File.expand_path("../../config/environment", __FILE__)
-require 'rspec/rails'
-require 'capybara/rspec'
+require "rspec/rails"
+require "capybara/rspec"
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -27,9 +27,8 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = false
   config.before(:suite) do
-
-  if config.use_transactional_fixtures?
-    raise(<<-MSG)
+    if config.use_transactional_fixtures?
+      raise(<<-MSG)
       Delete line `config.use_transactional_fixtures = true` from rails_helper.rb
       (or set it to false) to prevent uncommitted transactions being used in
       JavaScript-dependent specs.
@@ -48,8 +47,8 @@ RSpec.configure do |config|
   end
 
   config.before(:each, type: :feature) do
-  # :rack_test driver's Rack app under test shares database connection
-  # with the specs, so continue to use transaction strategy for speed.
+    # :rack_test driver's Rack app under test shares database connection
+    # with the specs, so continue to use transaction strategy for speed.
     driver_shares_db_connection_with_specs = Capybara.current_driver == :rack_test
 
     unless driver_shares_db_connection_with_specs
