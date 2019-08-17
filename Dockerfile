@@ -8,6 +8,7 @@ ADD Gemfile Gemfile.lock /app/
 RUN bundle install
 
 ADD . .
+RUN chown -R 991:991 public
 RUN bundle exec rails assets:precompile
 CMD bundle exec puma -C config/puma.rb
 
